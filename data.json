@@ -1,0 +1,246 @@
+{
+  "T-Shirts": [
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-1.jpg"
+      },
+      "name": "T-Shirt 1",
+      "price": 8000,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-2.png"
+      },
+      "name": "T-Shirt 2",
+      "price": 8000,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-3.png"
+      },
+      "name": "T-Shirt 3",
+      "price": 8000,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-4.png"
+      },
+      "name": "T-Shirt 4",
+      "price": 8000,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    }
+  ],
+  "Sweatshirts": [
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-1.jpg"
+      },
+      "name": "Sweatshirt 1",
+      "price": 15000,
+      "fund": 3000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-2.png"
+      },
+      "name": "Sweatshirt 2",
+      "price": 15000,
+      "fund": 3000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-3.png"
+      },
+      "name": "Sweatshirt 3",
+      "price": 15000,
+      "fund": 3000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-4.png"
+      },
+      "name": "Sweatshirt 4",
+      "price": 15000,
+      "fund": 3000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    }
+  ],
+  "Caps": [
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-1.jpg"
+      },
+      "name": "Cap 1",
+      "price": 4500,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-2.png"
+      },
+      "name": "Cap 2",
+      "price": 4500,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-3.png"
+      },
+      "name": "Cap 3",
+      "price": 4500,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-4.png"
+      },
+      "name": "Cap 4",
+      "price": 4500,
+      "fund": 2000,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    }
+  ],
+  "Totebags": [
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-1.jpg"
+      },
+      "name": "Totebag 1",
+      "price": 5000,
+      "fund": 1500,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-2.png"
+      },
+      "name": "Totebag 2",
+      "price": 5000,
+      "fund": 1500,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-3.png"
+      },
+      "name": "Totebag 3",
+      "price": 5000,
+      "fund": 1500,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    },
+
+    {
+      "image": {
+        "desktop": "./images/T-Shirt-4.png"
+      },
+      "name": "Totebag 4",
+      "price": 5000,
+      "fund": 1500,
+      "sizes": {
+        "S": 1,
+        "M": 1,
+        "L": 1,
+        "XL": 1
+      }
+    }
+  ]
+}
