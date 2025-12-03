@@ -2,7 +2,7 @@
   "T-Shirts": [
     {
       "image": {
-        "desktop": "./images/T-Shirt-1.jpg"
+        "default": "./images/T-Shirt-1.jpg"
       },
       "name": "T-Shirt 1",
       "price": 8000,
@@ -17,7 +17,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-2.png"
+        "default": "./images/T-Shirt-2.png"
       },
       "name": "T-Shirt 2",
       "price": 8000,
@@ -32,7 +32,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-3.png"
+        "default": "./images/T-Shirt-3.png"
       },
       "name": "T-Shirt 3",
       "price": 8000,
@@ -47,7 +47,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-4.png"
+        "default": "./images/T-Shirt-4.png"
       },
       "name": "T-Shirt 4",
       "price": 8000,
@@ -63,7 +63,10 @@
   "Sweatshirts": [
     {
       "image": {
-        "desktop": "./images/Sweatshirt-1.jpg"
+        "default": "./images/Sweatshirt-1.jpg",
+        "white": "./images/Sweatshirt-1-white.jpg",
+        "green": "./images/Sweatshirt-1-green.jpg",
+        "red": "./images/Sweatshirt-1-red.jpg"
       },
       "name": "Sweatshirt 1",
       "price": 15000,
@@ -79,7 +82,10 @@
 
     {
       "image": {
-        "desktop": "./images/Sweatshirt-2.jpg"
+        "default": "./images/Sweatshirt-1.jpg",
+        "white": "./images/Sweatshirt-1-white.jpg",
+        "green": "./images/Sweatshirt-1-green.jpg",
+        "red": "./images/Sweatshirt-1-red.jpg"
       },
       "name": "Sweatshirt 2",
       "price": 15000,
@@ -96,7 +102,7 @@
   "Caps": [
     {
       "image": {
-        "desktop": "./images/T-Shirt-1.jpg"
+        "default": "./images/T-Shirt-1.jpg"
       },
       "name": "Cap 1",
       "price": 4500,
@@ -111,7 +117,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-2.png"
+        "default": "./images/T-Shirt-2.png"
       },
       "name": "Cap 2",
       "price": 4500,
@@ -126,7 +132,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-3.png"
+        "default": "./images/T-Shirt-3.png"
       },
       "name": "Cap 3",
       "price": 4500,
@@ -141,7 +147,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-4.png"
+        "default": "./images/T-Shirt-4.png"
       },
       "name": "Cap 4",
       "price": 4500,
@@ -157,7 +163,7 @@
   "Totebags": [
     {
       "image": {
-        "desktop": "./images/T-Shirt-1.jpg"
+        "default": "./images/T-Shirt-1.jpg"
       },
       "name": "Totebag 1",
       "price": 5000,
@@ -172,7 +178,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-2.png"
+        "default": "./images/T-Shirt-2.png"
       },
       "name": "Totebag 2",
       "price": 5000,
@@ -187,7 +193,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-3.png"
+        "default": "./images/T-Shirt-3.png"
       },
       "name": "Totebag 3",
       "price": 5000,
@@ -202,7 +208,7 @@
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-4.png"
+        "default": "./images/T-Shirt-4.png"
       },
       "name": "Totebag 4",
       "price": 5000,

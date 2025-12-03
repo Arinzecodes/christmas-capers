@@ -39,7 +39,7 @@ function loadOptions(data) {
         sizes,
         colors,
         fund,
-        image: { desktop: desktopImageSRC },
+        image: { default: defaultImageSRC },
       } = obj;
 
       const {
@@ -76,7 +76,7 @@ function loadOptions(data) {
         "rounded",
         isAdded ? "added" : "not-added"
       );
-      image.src = desktopImageSRC;
+      image.src = defaultImageSRC;
       image.alt = "product-item";
 
       const cartConcern = newElementWithClass(
@@ -225,7 +225,7 @@ function loadOptions(data) {
             });
           color = colorOption;
           updateProductImage();
-          addToCart();
+          if (isAdded) addToCart();
         });
 
         return element;
@@ -256,10 +256,7 @@ function loadOptions(data) {
       }
 
       function updateProductImage() {
-        image.src = `${desktopImageSRC.slice(
-          0,
-          desktopImageSRC.length - 4
-        )}-${color}.jpg`;
+        image.src = obj.image[color];
       }
 
       function updatePriceText() {
@@ -280,11 +277,11 @@ function loadOptions(data) {
           total: price * quantity,
           imageSRC:
             color != ""
-              ? `${desktopImageSRC.slice(
+              ? `${defaultImageSRC.slice(
                   0,
-                  desktopImageSRC.length - 4
+                  defaultImageSRC.length - 4
                 )}-${color}.jpg`
-              : desktopImageSRC,
+              : defaultImageSRC,
           size: size,
           color: color,
           sizes: sizes ?? { M: 1 },

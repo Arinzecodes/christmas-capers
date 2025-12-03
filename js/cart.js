@@ -31,15 +31,52 @@ if (cartItems.length <= 0) {
   cartItems.forEach((item) => {
     const { name, price, quantity, size, imageSRC, sizes } = item;
 
+    const element = newElementWithClass(
+      "li",
+      "item",
+      "row",
+      "align-items-center"
+    );
+
     const image = newElementWithClass("img", "img-fluid");
     image.src = imageSRC;
     image.alt = "cart image";
+
+    const removeBtnIcon = newElementWithClass("img", "img-fluid");
+    removeBtnIcon.src = "images/icon-remove-item.svg";
+    removeBtnIcon.alt = "Remove Item";
+    const removeBtn = addElementsTo(
+      newElementWithClass("button", "remove-btn", "col"),
+      removeBtnIcon
+    );
+
+    removeBtn.addEventListener("click", () => {
+      delete cart[name];
+      localStorage.setItem("CART", JSON.stringify(cart));
+      cartTotalElement.textContent = `${nairaFormat(
+        Object.values(cart).reduce(
+          (total, { price, quantity, size, sizes: sizeMultipliers }) =>
+            total + price * quantity * (sizeMultipliers[size] ?? 1),
+          0
+        )
+      )}`;
+      cartQuantityElement.textContent = Object.values(cart).length;
+      orderedItems.removeChild(element);
+      if (Object.values(cart).length <= 0) {
+        confirmBtn.textContent = "Shop for Items";
+        confirmBtn.href = "/shop.html";
+        addElementsTo(
+          orderedItems,
+          addElementsTo(newElementWithClass("h3", "item"), "No Items Here")
+        );
+      }
+    });
 
     addElementsTo(
       orderedItems,
       addElementsTo(
         // The list item
-        newElementWithClass("li", "item", "row", "align-items-center"),
+        element,
         addElementsTo(
           newElementWithClass("div", "image-holder", "cart-img"),
           image
@@ -76,7 +113,8 @@ if (cartItems.length <= 0) {
               `${nairaFormat(quantity * price * sizes[size])}`
             )
           )
-        )
+        ),
+        removeBtn
       )
     );
   });

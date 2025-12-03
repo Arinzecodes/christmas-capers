@@ -325,6 +325,9 @@
                   <a class="nav-link me-4" href="#company-services">Services</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link me-4" href="#donation">Donate</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link me-4" href="#mobile-products">Products</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -517,6 +520,55 @@
       </div>
     </section>
     <section
+      id="donation"
+      class="p-3 d-flex justify-content-center padding-large"
+    >
+      <form
+        action="https://formsubmit.co/okusanyaoreofe@icloud.com"
+        class="checkout-form bg-white p-4 rounded w-75"
+        method="POST"
+        onsubmit="localStorage.setItem('DONATED', 'true');localStorage.setItem('DONATION', document.querySelector('#donation-input').value)"
+      >
+        <h2 class="text-primary fw-bolder mt-4">Help Us By Donating!</h2>
+        <h5 class="text-secondary h5 fw-bold">Description in Progress...</h5>
+
+        <div class="form-field mb-3">
+          <label for="donation" class="form-label fw-bold h6"
+            >Donation Amount:</label
+          >
+          <div class="input-group">
+            <span class="input-group-text bg-white fw-bold rounded">₦</span>
+            <input
+              type="number"
+              name="Donation"
+              id="donation-input"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-field mb-3">
+          <label for="email" class="form-label fw-bold h6">Email:</label
+          ><input type="email" name="Email" id="email" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-medium w-100 fw-bold">
+          Donate
+        </button>
+
+        <!-- Hidden Inputs -->
+        <input
+          type="hidden"
+          name="_autoresponse"
+          value="Thank you for Donating! Now complete your Payment"
+        />
+
+        <input type="hidden" name="_subject" value="New Donation!" />
+        <input type="hidden" name="_next" value="" id="next-page" />
+      </form>
+    </section>
+    <section
       id="mobile-products"
       class="product-store position-relative padding-large no-padding-top"
     >
@@ -594,7 +646,9 @@
                         </a>
                       </li> -->
                       <li>
-                        <a href="https://www.instagram.com/this_oreofe_talks/?hl=en">
+                        <a
+                          href="https://www.instagram.com/this_oreofe_talks/?hl=en"
+                        >
                           <svg class="instagram">
                             <use xlink:href="#instagram" />
                           </svg>
@@ -684,5 +738,10 @@
     <script type="text/javascript" src="js/utils.js" defer></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/index.js" defer></script>
+    <script defer>
+      document.querySelector(
+        "#next-page"
+      ).value = `${window.location.origin}/pay.html`;
+    </script>
   </body>
 </html>

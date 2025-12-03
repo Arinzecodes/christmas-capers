@@ -319,14 +319,15 @@
                 class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3"
               >
                 <li class="nav-item">
-                  <a class="nav-link me-4 active" href="index.html#billboard"
-                    >Home</a
-                  >
+                  <a class="nav-link me-4" href="index.html#billboard">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link me-4" href="index.html#company-services"
                     >Services</a
                   >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-4" href="index.html#donation">Donate</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link me-4" href="index.html#mobile-products"
@@ -335,7 +336,7 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a
-                    class="nav-link me-4 dropdown-toggle link-dark"
+                    class="nav-link me-4 dropdown-toggle link-dark active"
                     data-bs-toggle="dropdown"
                     href="#"
                     role="button"
@@ -344,6 +345,9 @@
                   >
                   <ul class="dropdown-menu">
                     <li>
+                      <a href="about.html" class="dropdown-item">About</a>
+                    </li>
+                    <li>
                       <a href="shop.html" class="dropdown-item">Shop</a>
                     </li>
                     <li>
@@ -351,6 +355,9 @@
                     </li>
                     <li>
                       <a href="checkout.html" class="dropdown-item">Checkout</a>
+                    </li>
+                    <li>
+                      <a href="contact.html" class="dropdown-item">Contact</a>
                     </li>
                   </ul>
                 </li>
@@ -390,7 +397,7 @@
     </header>
 
     <section class="padding-large px-5">
-      <h3 class="fw-bold">Thank you for placing this order!</h3>
+      <h3 class="fw-bold pay-title">Thank you for placing this order!</h3>
       <h6 class="text-secondary">
         Now Complete the rest of your Payment through bank transfer.
       </h6>
@@ -405,7 +412,7 @@
           <div class="col">
             <input
               type="text"
-              value="$0"
+              value="₦0"
               class="form-control bg-white fw-bolder border-2"
               id="amount"
               disabled
@@ -463,7 +470,7 @@
         </div>
         <button
           type="button"
-          class="btn btn-full btn-medium btn-primary fw-bold"
+          class="btn btn-full btn-medium btn-primary fw-bold confirm-btn"
         >
           I've Made the Payment
         </button>
@@ -571,6 +578,17 @@
         </div>
       </div>
     </div>
+    <div class="overlay">
+      <div class="bg-true-white p-5 rounded d-flex flex-column">
+        <img
+          src="images/icon-order-confirmed.svg"
+          alt="Order Confirmed"
+          class="img-thumbnail border-0 align-self-center"
+        />
+        <h2 class="text-primary fw-bolder h2">Payment Confirmed</h2>
+        <h5 class="fw-bold h5 pay-thanks">We hope you enjoy your Order!</h5>
+      </div>
+    </div>
     <script src="js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
@@ -579,11 +597,25 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script defer>
       const amountElem = document.getElementById("amount");
-      const cart = Object.values(JSON.parse(localStorage.getItem("CART")));
+      const confirmBtn = document.querySelector(".confirm-btn");
+      const overlay = document.querySelector(".overlay");
+      const cart = Object.values(
+        JSON.parse(localStorage.getItem("CART")) ?? {}
+      );
       const cartEmpty = cart.length <= 0;
+      const FORM_FILLED = JSON.parse(localStorage.getItem("FORM_FILLED"));
+      const DONATED = JSON.parse(localStorage.getItem("DONATED"));
 
-      if (cartEmpty || !JSON.parse(localStorage.getItem("FORM_FILLED")))
+      if ((cartEmpty || !FORM_FILLED) && !DONATED) {
         window.location.pathname = "/";
+      }
+
+      if (DONATED) {
+        document.querySelector(".pay-title").textContent =
+          "Thank you for Donating!";
+        document.querySelector(".pay-thanks").textContent =
+          "Thanks again for the Donation!";
+      }
 
       function nairaFormat(number) {
         return `${new Intl.NumberFormat("en-NG", {
@@ -594,12 +626,24 @@
       }
 
       amountElem.value = `${nairaFormat(
-        cart.reduce(
-          (total, { price, quantity, size, sizes: sizeMultipliers }) =>
-            total + price * quantity * (sizeMultipliers[size] ?? 1),
-          0
-        )
+        !DONATED
+          ? cart.reduce(
+              (total, { price, quantity, size, sizes: sizeMultipliers }) =>
+                total + price * quantity * (sizeMultipliers[size] ?? 1),
+              0
+            )
+          : JSON.parse(localStorage.getItem("DONATION"))
       )}`;
+
+      confirmBtn.addEventListener("click", () => {
+        overlay.style.display = "flex";
+        document.body.classList.add("overflow-hidden");
+        localStorage.clear();
+      });
+
+      overlay.addEventListener("click", () => {
+        setTimeout(() => (window.location.pathname = "/"), 1000);
+      });
     </script>
   </body>
 </html>
