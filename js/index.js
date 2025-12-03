@@ -37,20 +37,29 @@ function loadOptions(data) {
         //  "XXL": 2.5
         // }
         sizes,
+        colors,
         fund,
         image: { desktop: desktopImageSRC },
       } = obj;
 
-      const { quantity: previousQuantity, size: previousSize } = cart[name] ?? {
+      const {
+        quantity: previousQuantity,
+        size: previousSize,
+        color: previousColor,
+      } = cart[name] ?? {
         quantity: 1,
         size: "M",
+        color: "",
       };
 
       let quantity = previousQuantity;
       let size = previousSize;
+      let color = previousColor;
       let isAdded = added();
       let sizeOptions = sizes ?? { M: 1 };
+      let colorOptions = colors ?? [];
       const hasMultiSizeOptions = Object.keys(sizeOptions).length > 1;
+      const hasColorOptions = colorOptions.length > 0;
 
       //* Creation of the new Elements (also adding some of their attributes and content)
       const swiperWrapper = newElementWithClass("div", "swiper-slide");
@@ -195,6 +204,46 @@ function loadOptions(data) {
         ...sizeOptionsItems
       );
 
+      const colorOptionsItems = colorOptions.map((colorOption) => {
+        const element = newElementWithClass(
+          "li",
+          "color-option",
+          colorOption === color ? "selected" : "not-selected"
+        );
+
+        element.style.backgroundColor = colorOption;
+
+        element.addEventListener("click", () => {
+          if (element.classList.contains("selected")) return;
+          addClassTo(element, "selected");
+          element.classList.remove("not-selected");
+          colorOptionsItems
+            .filter((opt) => element != opt)
+            .forEach((opt) => {
+              addClassTo(opt, "not-selected");
+              opt.classList.remove("selected");
+            });
+          color = colorOption;
+          updateProductImage();
+          addToCart();
+        });
+
+        return element;
+      });
+
+      const colorOptionContainer = addElementsTo(
+        newElementWithClass(
+          "ul",
+          hasColorOptions ? "d-flex" : "d-none",
+          "flex-column",
+          "gap-2",
+          "position-absolute",
+          "list-unstyled",
+          "p-3"
+        ),
+        ...colorOptionsItems
+      );
+
       //* Functions
 
       function updateCart() {
@@ -204,6 +253,13 @@ function loadOptions(data) {
 
       function added() {
         return cart[name] != null;
+      }
+
+      function updateProductImage() {
+        image.src = `${desktopImageSRC.slice(
+          0,
+          desktopImageSRC.length - 4
+        )}-${color}.jpg`;
       }
 
       function updatePriceText() {
@@ -222,8 +278,15 @@ function loadOptions(data) {
           price: price,
           quantity: quantity,
           total: price * quantity,
-          imageSRC: desktopImageSRC,
+          imageSRC:
+            color != ""
+              ? `${desktopImageSRC.slice(
+                  0,
+                  desktopImageSRC.length - 4
+                )}-${color}.jpg`
+              : desktopImageSRC,
           size: size,
+          color: color,
           sizes: sizes ?? { M: 1 },
         };
         isAdded = true;
@@ -303,7 +366,12 @@ function loadOptions(data) {
         swiperWrapper,
         addElementsTo(
           element,
-          addElementsTo(imageHolder, sizeOptionContainer, image),
+          addElementsTo(
+            imageHolder,
+            sizeOptionContainer,
+            colorOptionContainer,
+            image
+          ),
           addElementsTo(
             cartConcern,
             inShop && isAdded ? quantityButtonWrapper : addButtonWrapper
@@ -316,6 +384,8 @@ function loadOptions(data) {
           )
         )
       );
+
+      if (color != "") updateProductImage();
 
       addElementsTo(swiper, swiperWrapper);
     });

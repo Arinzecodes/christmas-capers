@@ -940,6 +940,19 @@ figure.instagram-item img.insta-image {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 0.25em;
+}
+.color-option.selected {
+  border: 3px solid var(--primary-color);
+}
+ul:has(.color-option) {
+  right: 0;
+}
 .item-fund {
   font-size: 0.75rem;
 }

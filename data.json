@@ -63,7 +63,7 @@
   "Sweatshirts": [
     {
       "image": {
-        "desktop": "./images/T-Shirt-1.jpg"
+        "desktop": "./images/Sweatshirt-1.jpg"
       },
       "name": "Sweatshirt 1",
       "price": 15000,
@@ -73,12 +73,13 @@
         "M": 1,
         "L": 1,
         "XL": 1
-      }
+      },
+      "colors": ["white", "green", "red"]
     },
 
     {
       "image": {
-        "desktop": "./images/T-Shirt-2.png"
+        "desktop": "./images/Sweatshirt-2.jpg"
       },
       "name": "Sweatshirt 2",
       "price": 15000,
@@ -88,37 +89,8 @@
         "M": 1,
         "L": 1,
         "XL": 1
-      }
-    },
-
-    {
-      "image": {
-        "desktop": "./images/T-Shirt-3.png"
       },
-      "name": "Sweatshirt 3",
-      "price": 15000,
-      "fund": 3000,
-      "sizes": {
-        "S": 1,
-        "M": 1,
-        "L": 1,
-        "XL": 1
-      }
-    },
-
-    {
-      "image": {
-        "desktop": "./images/T-Shirt-4.png"
-      },
-      "name": "Sweatshirt 4",
-      "price": 15000,
-      "fund": 3000,
-      "sizes": {
-        "S": 1,
-        "M": 1,
-        "L": 1,
-        "XL": 1
-      }
+      "colors": ["white", "green", "red"]
     }
   ],
   "Caps": [
