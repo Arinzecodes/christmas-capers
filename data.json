@@ -6,7 +6,7 @@
       },
       "name": "T-Shirt 1",
       "price": 8000,
-      "fund": 2000,
+      "fund": 1500,
       "sizes": {
         "S": 1,
         "M": 1,
@@ -21,7 +21,7 @@
       },
       "name": "T-Shirt 2",
       "price": 8000,
-      "fund": 2000,
+      "fund": 1500,
       "sizes": {
         "S": 1,
         "M": 1,
@@ -36,7 +36,7 @@
       },
       "name": "T-Shirt 3",
       "price": 8000,
-      "fund": 2000,
+      "fund": 1500,
       "sizes": {
         "S": 1,
         "M": 1,
@@ -51,7 +51,7 @@
       },
       "name": "T-Shirt 4",
       "price": 8000,
-      "fund": 2000,
+      "fund": 1500,
       "sizes": {
         "S": 1,
         "M": 1,
@@ -82,10 +82,10 @@
 
     {
       "image": {
-        "default": "./images/Sweatshirt-1.jpg",
-        "white": "./images/Sweatshirt-1-white.jpg",
-        "green": "./images/Sweatshirt-1-green.jpg",
-        "red": "./images/Sweatshirt-1-red.jpg"
+        "default": "./images/Sweatshirt-2.jpg",
+        "white": "./images/Sweatshirt-2-white.jpg",
+        "green": "./images/Sweatshirt-2-green.jpg",
+        "red": "./images/Sweatshirt-2-red.jpg"
       },
       "name": "Sweatshirt 2",
       "price": 15000,
